@@ -1,16 +1,16 @@
 # Завдання 2
-# Не робив перевірку для введених даних в функції тому, що не знаю як запускати функцію, і вже в ній запитувати дані
 import random
 
-lottery_numbers = set()
-def get_numbers_ticket(min, max, quantity):
+def get_numbers_ticket():
+    lottery_numbers = set()
     try:
-        while len(lottery_numbers) < int(quantity):
-            lottery_numbers.add(random.randint(int(min), int(max)))
-        return f"Ваші лотерейні числа: {sorted(list(lottery_numbers))}"
+        minn = int(input("Введіть мінімальне число для лотереї: "))
+        maxx = int(input("Введіть максимальне число для лотереї: "))
+        quantityy = int(input("Введіть кількість чисел для лотереї: "))
+        if minn > 0 and (maxx) < 1000 and quantityy < maxx:
+            while len(lottery_numbers) < quantityy:
+                lottery_numbers.add(random.randint(minn, maxx))
+            return f"Ваші лотерейні числа: {sorted(list(lottery_numbers))}"
     except ValueError:
         return "Некоректний запис даних!!!"
-print(get_numbers_ticket(
-input("Введіть мінімальне число для лотереї: "),
-input("Введіть максимальне число для лотереї: "),
-input("Введіть кількість чисел для лотереї: ")))
+print(get_numbers_ticket())
