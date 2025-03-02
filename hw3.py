@@ -1,7 +1,7 @@
 # Завдання 3
 import re
 
-def prepare ():
+def prepare (numbers):
     # patterns
     pattern = r'^\+380\d{9}$'
     pattern1 = r'^380\d{9}$'
@@ -9,8 +9,6 @@ def prepare ():
     # lists
     r_numbers = []
     gotovi_nomera = []
-    # numbers v r_numbers
-    numbers = input("Введіть номери телефонів через кому: ").split(',')
     for number in numbers:
         clean_number = "".join(re.findall(r'\d|\+', number))  # Витягуємо тільки цифри та "+"
         r_numbers.append(clean_number)
@@ -29,4 +27,4 @@ def prepare ():
         return "Невірний формат даних!!!"
     else:
         return gotovi_nomera
-print(prepare())
+print(prepare(input("Введіть номери телефонів через кому: ").split(',')))
