@@ -1,7 +1,7 @@
 # Завдання 3
 import re
 
-def prepare (number):
+def phone_number (number):
     # patterns
     pattern = r'^\+380\d{9}$'
     pattern1 = r'^380\d{9}$'
@@ -17,4 +17,4 @@ def prepare (number):
         return number
     else:
         return "Невірний формат даних!!!"
-print(prepare(input("Введіть номер телефону для приведення його до стандартного вигляду: ")))
+print(phone_number(input("Введіть номер телефону для приведення його до стандартного вигляду: ")))
