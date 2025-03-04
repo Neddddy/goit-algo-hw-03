@@ -1,20 +1,20 @@
 # Завдання 3
 import re
 
-def phone_number (number):
+def normalize_phone (phone_number):
     # patterns
     pattern = r'^\+380\d{9}$'
     pattern1 = r'^380\d{9}$'
     pattern2 = r'^0\d{9}$'
-    number = "".join(re.findall(r'\d|\+', number))
-    if re.match(pattern, number):
-        return number
-    elif re.match(pattern1, number):
-        number = "+" + number
-        return number
-    elif re.match(pattern2, number):
-        number = "+38" + number
-        return number
+    number = "".join(re.findall(r'\d|\+', phone_number))
+    if re.match(pattern, phone_number):
+        return phone_number
+    elif re.match(pattern1, phone_number):
+        phone_number = "+" + phone_number
+        return phone_number
+    elif re.match(pattern2, phone_number):
+        phone_number = "+38" + phone_number
+        return phone_number
     else:
         return "Невірний формат даних!!!"
-print(phone_number(input("Введіть номер телефону для приведення його до стандартного вигляду: ")))
+print(normalize_phone(input("Введіть номер телефону для приведення його до стандартного вигляду: ")))
