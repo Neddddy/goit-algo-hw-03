@@ -6,7 +6,7 @@ def normalize_phone (phone_number):
     pattern = r'^\+380\d{9}$'
     pattern1 = r'^380\d{9}$'
     pattern2 = r'^0\d{9}$'
-    number = "".join(re.findall(r'\d|\+', phone_number))
+    phone_number = "".join(re.findall(r'\d|\+', phone_number))
     if re.match(pattern, phone_number):
         return phone_number
     elif re.match(pattern1, phone_number):
