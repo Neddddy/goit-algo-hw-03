@@ -7,7 +7,7 @@ def get_numbers_ticket(min, max, quantity):
         if 1 <= min <= max <= 1000 and quantity <= max - min:
             while len(lottery_numbers) < quantity:
                 lottery_numbers.add(random.randint(min, max))
-            return f"Ваші лотерейні числа: {sorted(list(lottery_numbers))}"
+            return sorted(list(lottery_numbers))
         else:
             return list(lottery_numbers)
     except ValueError:
